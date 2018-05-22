@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block page_title %}Title{% endblock %}</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'newsfeed/css/main.css' %}"/>
+</head>
+
+<body>
+<section class="main-content">
+{% block page_head %}
+    <header class="site-head">
+        <h1 class="site-name">Social Network</h1>
+        <p><pre>{% block your_name %}{% endblock %}</pre></p>
+    </header><hr/>
+{% endblock %}
+
+{% block page_list %}
+    <div class="page-list">
+    <ul class="list">
+        <a href="{% url 'newsfeed:newsfeed' %}"><li class="item">NewsFeed</li></a>
+        <a href="{% url 'newsfeed:messages' %}"><li class="item">Messages</li></a>
+        <a href="{% url 'newsfeed:notifications' %}"><li class="item">Notifications</li></a>
+        <li class="item">
+            <a href="{% block session_link %}{% url 'newsfeed:logout' %}{% endblock %}">
+            <button class="session-button">{% block session_name %}Logout{% endblock %}</button>
+            </a>
+        </li>
+        <div style="clear: both"></div>
+    </ul>
+    </div><hr/>
+{% endblock %}
+
+{% block page_content %}
+    <h3>No Content Found</h3>
+{% endblock %}
+
+{% block page_foot %}
+    <footer class="site-foot">&copy; 2018 | Developed and Managed by Vipul Sharma.</footer>
+{% endblock %}
+</section>
+</body>
+</html>

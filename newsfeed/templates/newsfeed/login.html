@@ -1,0 +1,10 @@
+{% extends 'newsfeed/form.html' %}
+{% block page_title %}Login{% endblock %}
+{% block page_content %}
+    <form action="{% url 'newsfeed:login' %}" method="post">
+    {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Login</button>
+    </form>
+    <a href="{% url 'newsfeed:register' %}"><button>Register</button></a>
+{% endblock %}

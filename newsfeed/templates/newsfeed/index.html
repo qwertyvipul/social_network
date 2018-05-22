@@ -1,0 +1,15 @@
+{% extends 'newsfeed/base.html' %}
+{% block page_title %}This is NewsFeed{% endblock %}
+{% block your_name %}{{ name }}{% endblock %}
+{% block page_content %}
+<section class="site-content">
+    <div>
+        {% for post in all_post %}
+        <div class="post">
+            <h3 class="post-title">{{ post.title }}</h3>
+            <p class="post-content">{{ post.content }}</p>
+        </div><hr/>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

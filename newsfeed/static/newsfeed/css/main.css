@@ -1,0 +1,14 @@
+*{margin: 0px; padding: 0px; box-sizing: border-box;}
+body{background: #fafafa;}
+.main-content{max-width: 600px; margin:0 auto; background: #fff;}
+.site-head{text-align: center; padding:20px;}
+
+/*SITE LIST*/
+.list{background: royalblue; color:#fff; list-style: none}
+.item{float: left; padding: 5px; color:#fff;}
+.item:hover{background: cornflowerblue;}
+.session-button{padding:0px 2px; font-size:14px; border:none;}
+
+.site-content{padding:0px 5px;}
+.post{margin: 5px;}
+.site-foot{background: gainsboro; text-align: center; font-size: 12px; padding:5px;}
