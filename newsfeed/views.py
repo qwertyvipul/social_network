@@ -7,6 +7,7 @@ from django.shortcuts import redirect
 
 
 def index(request):
+    #This is slave
     return redirect('newsfeed:newsfeed')
 
 def newsfeed(request):
