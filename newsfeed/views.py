@@ -1,34 +1,62 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import NewsFeed, UserInfo
+from .models import *
 from .forms import *
 from django.urls import reverse_lazy
 from django.shortcuts import redirect
 
+
 def index(request):
-    pass
+    return redirect('newsfeed:newsfeed')
 
 def newsfeed(request):
-    if request.session.has_key('id') and request.session['id']!=0:
-        id = request.session['id']
+    if request.session.has_key('user_id') and request.session['user_id']!=0:
+        id = request.session['user_id']
     else:
         return redirect('newsfeed:login')
     query = UserInfo.objects.filter(id=id)
     for user in query:
         name = user.name
     all_post = NewsFeed.objects.all()
+    form = statusForm()
     context = {
         'name': name,
         'all_post': all_post,
+        'statusForm': form,
     }
     return render(request, 'newsfeed/index.html', context)
     #return HttpResponse('<h1>You are viewing newsfeed</h1>')
 
 def messages(request):
-    pass
+    if request.session.has_key('user_id') and request.session['user_id']!=0:
+        id = request.session['user_id']
+    else:
+        return redirect('newsfeed:login')
+
+    query = UserInfo.objects.filter(id=id)
+    for user in query:
+        name = user.name
+
+    all_messages = Messages.objects.all()
+    context = {
+        'name': name,
+        'all_messages':all_messages,
+    }
+    return render(request, 'newsfeed/messages.html', context)
 
 def notifcations(request):
-    pass
+    if request.session.has_key('user_id') and request.session['user_id']!=0:
+        id = request.session['user_id']
+    else:
+        return redirect('newsfeed:login')
+
+    query = UserInfo.objects.filter(id=id)
+    for user in query:
+        name = user.name
+    context = {
+        'name': name,
+    }
+    return render(request, 'newsfeed/notifications.html', context)
 
 def register(request):
     if request.method == 'POST':
@@ -37,6 +65,9 @@ def register(request):
             user = UserInfo()
             user.name = registerForm.cleaned_data['name']
             user.username = registerForm.cleaned_data['username']
+            # You may not want to store plain text password in your database
+            # This is just for testing purpose in real life it is not safe
+            # You miss they hit!
             user.password = registerForm.cleaned_data['password']
             user.save()
             return redirect('newsfeed:login')
@@ -56,12 +87,18 @@ def login(request):
                 for result in query:
                     id = result.id
 
-                request.session['id'] = id
+                request.session['user_id'] = id
                 return redirect('newsfeed:newsfeed')
 
     form = LoginForm()
     return render(request, 'newsfeed/login.html', context={'form':form})
 
 def logout(request):
-    request.session['id']=0
+    request.session['user_id']=0
     return redirect('newsfeed:login')
+
+def postStatus(request):
+    pass
+
+def uploadPhoto(request):
+    pass

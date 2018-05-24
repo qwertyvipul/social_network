@@ -1,15 +1,29 @@
 {% extends 'newsfeed/base.html' %}
-{% block page_title %}This is NewsFeed{% endblock %}
+{% block page_title %}NewsFeed{% endblock %}
 {% block your_name %}{{ name }}{% endblock %}
 {% block page_content %}
 <section class="site-content">
-    <div>
-        {% for post in all_post %}
-        <div class="post">
-            <h3 class="post-title">{{ post.title }}</h3>
-            <p class="post-content">{{ post.content }}</p>
+    <div class=""post-status>
+        <form action="{% url 'newsfeed:postStatus' %}">
+            {{ statusForm.as_p }}
+            <button type="submit">Post</button>
+        </form>
+        <a href="{% url 'newsfeed:uploadPhoto' %}"><button>Upload Photo</button></a>
+    </div><hr/>
+    <section class="newsfeed-section">
+        <h2>All Posts</h2><hr/>
+        <div class="newsfeed-div">
+            <h3>This is a title</h3>
+            <p>This is the post content.</p>
+            <a href="#"><button>Like</button></a>
+            <a href="#"><button>Comments(0)</button></a>
         </div><hr/>
-        {% endfor %}
-    </div>
+        <div class="newsfeed-div">
+            <h3>This is a title</h3>
+            <p>This is the post content.</p>
+            <a href="#"><button>Like</button></a>
+            <a href="#"><button>Comments(0)</button></a>
+        </div><hr/>
+    </section>
 </section>
 {% endblock %}

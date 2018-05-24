@@ -1,10 +1,30 @@
 {% extends 'newsfeed/base.html' %}
-{% block page_title %}Your Messages{% endblock %}
+{% block page_title %}Messages{% endblock %}
 {% block your_name %}{{ name }}{% endblock %}
 {% block page_content %}
 <section class="site-content">
-    <div>
-        
-    </div>
+    <form>
+        <label>New Message</label>
+        <input type="text" placeholder="Search"/>
+        <button>Search</button>
+    </form><hr/>
+    <section>
+        <div>
+            <a href="#">
+                <div>
+                    <h3>Contact Name</h3>
+                    <p>Last Message</p>
+                </div>
+            </a>
+        </div><hr/>
+        <div>
+            <a href="#">
+                <div>
+                    <h3>Contact Name</h3>
+                    <p>Last Message</p>
+                </div>
+            </a>
+        </div><hr/>
+    </section>
 </section>
 {% endblock %}
