@@ -17,11 +17,11 @@ def newsfeed(request):
     query = UserInfo.objects.filter(id=id)
     for user in query:
         name = user.name
-    all_post = NewsFeed.objects.all()
-    form = statusForm()
+    all_posts = NewsFeed.objects.all().order_by('time').reverse()
+    form = StatusForm()
     context = {
         'name': name,
-        'all_post': all_post,
+        'all_posts': all_posts,
         'statusForm': form,
     }
     return render(request, 'newsfeed/index.html', context)
@@ -98,7 +98,25 @@ def logout(request):
     return redirect('newsfeed:login')
 
 def postStatus(request):
-    pass
+    if request.session.has_key('user_id') and request.session['user_id']!=0:
+        id = request.session['user_id']
+    else:
+        return redirect('newsfeed:login')
+
+    if request.method == "POST":
+        statusForm = StatusForm(request.POST)
+        if statusForm.is_valid():
+            status = NewsFeed()
+            query = UserInfo.objects.filter(id=id)
+            for user in query:
+                status.user = user
+                break
+            status.title = statusForm.cleaned_data['title']
+            status.content = statusForm.cleaned_data['content']
+            status.save()
+
+    return redirect('newsfeed:newsfeed')
+
 
 def uploadPhoto(request):
     pass

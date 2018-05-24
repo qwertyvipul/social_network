@@ -9,9 +9,9 @@ class LoginForm(forms.Form):
     username = forms.CharField(max_length=20)
     password = forms.CharField(widget=forms.PasswordInput(), max_length=60)
 
-class statusForm(forms.Form):
+class StatusForm(forms.Form):
     title = forms.CharField(max_length=60)
     content = forms.CharField(max_length=250)
 
-class messageForm(forms.Form):
+class MessageForm(forms.Form):
     message = forms.CharField(max_length=250)
