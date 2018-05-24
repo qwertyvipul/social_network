@@ -2,9 +2,11 @@
 {% block page_title %}NewsFeed{% endblock %}
 {% block your_name %}{{ name }}{% endblock %}
 {% block page_content %}
+
 <section class="site-content">
     <div class=""post-status>
-        <form action="{% url 'newsfeed:postStatus' %}">
+        <form action="{% url 'newsfeed:postStatus' %}" method="post">
+            {% csrf_token %}
             {{ statusForm.as_p }}
             <button type="submit">Post</button>
         </form>
@@ -12,18 +14,20 @@
     </div><hr/>
     <section class="newsfeed-section">
         <h2>All Posts</h2><hr/>
-        <div class="newsfeed-div">
-            <h3>This is a title</h3>
-            <p>This is the post content.</p>
-            <a href="#"><button>Like</button></a>
-            <a href="#"><button>Comments(0)</button></a>
-        </div><hr/>
-        <div class="newsfeed-div">
-            <h3>This is a title</h3>
-            <p>This is the post content.</p>
-            <a href="#"><button>Like</button></a>
-            <a href="#"><button>Comments(0)</button></a>
-        </div><hr/>
+        {% if all_posts %}
+            {% for post in all_posts %}
+                <div class="newsfeed-div">
+                    <h3>{{ post.title }}</h3>
+                    <p>{{ post.content }}</p>
+                    <pre>{{ post.user.name }}</pre>
+                    <pre>{{ post.time }}</pre>
+                    <a href="#"><button>Like</button></a>
+                    <a href="#"><button>Comments(0)</button></a>
+                </div><hr/>
+            {% endfor %}
+        {% else %}
+            <pre>No Posts Found!</pre><hr/>
+        {% endif %}
     </section>
 </section>
 {% endblock %}
