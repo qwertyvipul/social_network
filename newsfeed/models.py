@@ -34,6 +34,8 @@ class Notifications(models.Model):
     title = models.CharField(max_length=60)
     content = models.CharField(max_length=250)
 
+class Pictures(models.Model):
+    pass
 
 '''
 '>> python manage.py migrate newsfeed --fake
