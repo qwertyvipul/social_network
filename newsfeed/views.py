@@ -155,3 +155,17 @@ def likeStatus(request, status_id):
 
 def unlikeStatus(request):
     pass
+
+def profile(request):
+    if request.session.has_key('user_id') and request.session['user_id']!=0:
+        id = request.session['user_id']
+    else:
+        return redirect('newsfeed:login')
+    query = UserInfo.objects.filter(id=id)
+    for user in query:
+        break
+
+    context = {
+        'user': user,
+    }
+    return render(request, 'newsfeed/profile.html', context)
