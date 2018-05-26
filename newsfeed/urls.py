@@ -13,4 +13,7 @@ urlpatterns = [
     path('logout/', views.logout, name='logout'),
     path('status-update/', views.postStatus, name='postStatus'),
     path('upload-photo/', views.uploadPhoto, name='uploadPhoto'),
+    path('like-status/<int:status_id>', views.likeStatus, name='likeStatus'),
+    path('unlike-status/<int:status_id>', views.unlikeStatus, name='unlikeStatus'),
+    path('profile/', views.profile, name='profile'),
 ]

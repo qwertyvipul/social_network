@@ -74,6 +74,9 @@ WSGI_APPLICATION = 'social_network.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
+# To use existing legacy database
+# https://datascience.blog.wzb.eu/2017/03/21/using-django-with-an-existinglegacy-database/
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',

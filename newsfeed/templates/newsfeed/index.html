@@ -1,6 +1,6 @@
 {% extends 'newsfeed/base.html' %}
 {% block page_title %}NewsFeed{% endblock %}
-{% block your_name %}{{ name }}{% endblock %}
+{% block your_name %}{{ user.name }}{% endblock %}
 {% block page_content %}
 
 <section class="site-content">
@@ -21,8 +21,10 @@
                     <p>{{ post.content }}</p>
                     <pre>{{ post.user.name }}</pre>
                     <pre>{{ post.time }}</pre>
-                    <a href="#"><button>Like</button></a>
-                    <a href="#"><button>Comments(0)</button></a>
+                    {% with post_id=post.id %}
+                        <a href="{% url 'newsfeed:likeStatus' post.id %}"><button>Like({{ post.likes_set.count }})</button></a>
+                        <a href="#"><button>Comment({{ post.comments_set.count }})</button></a>
+                    {% endwith %}
                 </div><hr/>
             {% endfor %}
         {% else %}

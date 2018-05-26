@@ -16,11 +16,12 @@ def newsfeed(request):
         return redirect('newsfeed:login')
     query = UserInfo.objects.filter(id=id)
     for user in query:
-        name = user.name
+        break
     all_posts = NewsFeed.objects.all().order_by('time').reverse()
+
     form = StatusForm()
     context = {
-        'name': name,
+        'user': user,
         'all_posts': all_posts,
         'statusForm': form,
     }
@@ -120,3 +121,51 @@ def postStatus(request):
 
 def uploadPhoto(request):
     pass
+
+def likeStatus(request, status_id):
+    if request.session.has_key('user_id') and request.session['user_id']!=0:
+        id = request.session['user_id']
+    else:
+        return redirect('newsfeed:login')
+
+    query = UserInfo.objects.filter(id=id)
+    for user in query:
+        break
+
+    query = NewsFeed.objects.filter(id=status_id)
+    for status in query:
+        break
+
+    query = Likes.objects.filter(user=user)
+    query = query.filter(newsfeed=status)
+    if query.count()>0:
+        for like in query:
+            if like.has_liked:
+                return HttpResponse('<h3>This is post has already been liked by you.</h3>')
+            else:
+                like.has_liked = True
+                return redirect('newsfeed:newsfeed')
+    like = Likes()
+    like.user = user
+    like.newsfeed = status
+    like.has_liked = True
+    like.save()
+
+    return redirect('newsfeed:newsfeed')
+
+def unlikeStatus(request):
+    pass
+
+def profile(request):
+    if request.session.has_key('user_id') and request.session['user_id']!=0:
+        id = request.session['user_id']
+    else:
+        return redirect('newsfeed:login')
+    query = UserInfo.objects.filter(id=id)
+    for user in query:
+        break
+
+    context = {
+        'user': user,
+    }
+    return render(request, 'newsfeed/profile.html', context)
