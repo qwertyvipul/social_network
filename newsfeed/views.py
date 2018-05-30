@@ -169,3 +169,6 @@ def profile(request):
         'user': user,
     }
     return render(request, 'newsfeed/profile.html', context)
+
+def uploadProfilePic():
+    pass

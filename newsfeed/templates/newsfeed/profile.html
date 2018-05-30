@@ -4,6 +4,9 @@
 
 {% block page_content %}
 <section class="site-content">
+    <h1>Hey {{ user.name }}, wassup!</h1>
+    <form action="{% url 'newsfeed:uploadProfilePic' %}" method=""post>
 
+    </form>
 </section>
 {% endblock %}
