@@ -85,6 +85,10 @@ DATABASES = {
 		'PASSWORD': 'password',
 		'HOST': 'localhost',
 		'PORT': '3306',
+
+        'OPTIONS': {
+           'init_command': 'SET default_storage_engine=INNODB',
+        }
     }
 }
 
@@ -136,3 +140,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media') #actual directory in our server
+MEDIA_URL = '/media/' #this is for the website
+
+

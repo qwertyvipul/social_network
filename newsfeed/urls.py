@@ -16,4 +16,5 @@ urlpatterns = [
     path('like-status/<int:status_id>', views.likeStatus, name='likeStatus'),
     path('unlike-status/<int:status_id>', views.unlikeStatus, name='unlikeStatus'),
     path('profile/', views.profile, name='profile'),
+    path('upload-profile-pic/', views.uploadProfilePic, name='uploadProfilePic')
 ]

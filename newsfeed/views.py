@@ -165,7 +165,35 @@ def profile(request):
     for user in query:
         break
 
+    query = ProfilePictures.objects.filter(user = user)
+    profilePicForm = ProfilePicForm()
     context = {
         'user': user,
+        'profilePicForm': profilePicForm,
+        'query': query,
     }
     return render(request, 'newsfeed/profile.html', context)
+
+def uploadProfilePic(request):
+    if request.session.has_key('user_id') and request.session['user_id']!=0:
+        id = request.session['user_id']
+    else:
+        return redirect('newsfeed:login')
+
+    if request.method == "POST":
+        profilePicForm = ProfilePicForm(request.POST, request.FILES)
+        if profilePicForm.is_valid():
+            profilePic = ProfilePictures()
+            query = UserInfo.objects.filter(id=id)
+            for user in query:
+                profilePic.user = user
+                break
+            profilePic.profile_pic = profilePicForm.cleaned_data['profile_pic']
+            profilePic.save()
+            return redirect('newsfeed:profile')
+        else:
+            print(profilePicForm.errors)
+            return HttpResponse(profilePicForm.errors)
+
+    return HttpResponse("<h1>Return</h1>")
+    return redirect('newsfeed:profile')
