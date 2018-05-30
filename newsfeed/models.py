@@ -55,7 +55,7 @@ class Notifications(models.Model):
 
 class ProfilePictures(models.Model):
     user = models.ForeignKey(UserInfo, on_delete=models.CASCADE)
-    profile_pic = models.FileField()
+    profile_pic = models.FileField(upload_to='profile_pics/')
 
     class Meta:
         db_table = "tvs_profile_pics"

@@ -4,9 +4,17 @@
 
 {% block page_content %}
 <section class="site-content">
-    <h1>Hey {{ user.name }}, wassup!</h1>
-    <form action="{% url 'newsfeed:uploadProfilePic' %}" method=""post>
-
+    <h3>Hey {{ user.name }}, wassup!</h3><hr/>
+    <form action="{% url 'newsfeed:uploadProfilePic' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ profilePicForm.as_p }}
+        <button type="submit">Upload</button>
     </form>
+
+    <section>
+        {% for result in query %}
+            <img src="{{ result.profile_pic.url }}" width="200px" height="200px"/>
+        {% endfor %}
+    </section>
 </section>
 {% endblock %}

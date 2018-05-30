@@ -15,3 +15,6 @@ class StatusForm(forms.Form):
 
 class MessageForm(forms.Form):
     message = forms.CharField(max_length=250)
+
+class ProfilePicForm(forms.Form):
+    profile_pic = forms.FileField()
