@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../../Workspace/face-recognition/.idea/face-recognition.iml" filepath="$PROJECT_DIR$/../../Workspace/face-recognition/.idea/face-recognition.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/social_network.iml" filepath="$PROJECT_DIR$/.idea/social_network.iml" />
     </modules>
   </component>
