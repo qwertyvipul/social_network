@@ -242,6 +242,7 @@ def liveAttendance(request):
 
 
     #webcamDetection()
+
     all_names = webcamRecognition()
 
     query = UserInfo.objects.filter(id=id)
@@ -298,7 +299,6 @@ def webcamDetection():
     cv2.destroyAllWindows()
 
     return
-
 
 def webcamRecognition():
 

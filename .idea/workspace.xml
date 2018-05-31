@@ -5,7 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/encodings.json" afterPath="$PROJECT_DIR$/encodings.json" />
       <change beforePath="$PROJECT_DIR$/newsfeed/templates/newsfeed/index.html" afterPath="$PROJECT_DIR$/newsfeed/templates/newsfeed/index.html" />
-      <change beforePath="$PROJECT_DIR$/newsfeed/urls.py" afterPath="$PROJECT_DIR$/newsfeed/urls.py" />
+      <change beforePath="$PROJECT_DIR$/newsfeed/templates/newsfeed/live-attendance.html" afterPath="$PROJECT_DIR$/newsfeed/templates/newsfeed/live-attendance.html" />
       <change beforePath="$PROJECT_DIR$/newsfeed/views.py" afterPath="$PROJECT_DIR$/newsfeed/views.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,11 +20,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/newsfeed/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
-              <caret line="254" column="52" lean-forward="false" selection-start-line="254" selection-start-column="52" selection-end-line="254" selection-end-column="52" />
+            <state relative-caret-position="210">
+              <caret line="243" column="5" lean-forward="false" selection-start-line="243" selection-start-column="5" selection-end-line="243" selection-end-column="5" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
                 <element signature="e#939#1381#0" expanded="false" />
@@ -35,21 +35,19 @@
                 <element signature="e#3294#3935#0" expanded="false" />
                 <element signature="e#4014#4870#0" expanded="false" />
                 <element signature="e#4935#5445#0" expanded="false" />
-                <element signature="e#7866#9389#0" expanded="false" />
+                <element signature="e#7867#9390#0" expanded="false" />
                 <element signature="e#9422#12471#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="live-attendance.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="live-attendance.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/newsfeed/templates/newsfeed/live-attendance.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="20" lean-forward="true" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
-              <folding>
-                <element signature="e#292#317#0#HTML" expanded="true" />
-              </folding>
+            <state relative-caret-position="153">
+              <caret line="9" column="37" lean-forward="false" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -57,8 +55,8 @@
       <file leaf-file-name="encodings.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/encodings.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-6510">
-              <caret line="2" column="8" lean-forward="false" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
+            <state relative-caret-position="465">
+              <caret line="267" column="9" lean-forward="false" selection-start-line="267" selection-start-column="9" selection-end-line="267" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -67,8 +65,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/newsfeed/templates/newsfeed/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="8" column="26" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="35" selection-end-column="14" />
+            <state relative-caret-position="221">
+              <caret line="13" column="32" lean-forward="false" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -104,11 +102,11 @@
         <option value="$PROJECT_DIR$/newsfeed/models.py" />
         <option value="$PROJECT_DIR$/newsfeed/templates/newsfeed/upload-photo.html" />
         <option value="$PROJECT_DIR$/newsfeed/urls.py" />
-        <option value="$PROJECT_DIR$/newsfeed/templates/newsfeed/index.html" />
         <option value="$PROJECT_DIR$/newsfeed/face_recognition_api.py" />
+        <option value="$PROJECT_DIR$/newsfeed/templates/newsfeed/live-attendance.html" />
         <option value="$PROJECT_DIR$/encodings.json" />
         <option value="$PROJECT_DIR$/newsfeed/views.py" />
-        <option value="$PROJECT_DIR$/newsfeed/templates/newsfeed/live-attendance.html" />
+        <option value="$PROJECT_DIR$/newsfeed/templates/newsfeed/index.html" />
       </list>
     </option>
   </component>
@@ -141,8 +139,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -177,6 +173,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -252,11 +250,11 @@
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32668713" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32055214" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32055214" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297546" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297546" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23466258" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15279879" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15506808" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -363,7 +361,7 @@
             <element signature="e#3294#3935#0" expanded="false" />
             <element signature="e#4014#4870#0" expanded="false" />
             <element signature="e#4935#5445#0" expanded="false" />
-            <element signature="e#7866#9389#0" expanded="false" />
+            <element signature="e#7867#9390#0" expanded="false" />
             <element signature="e#9422#12471#0" expanded="false" />
           </folding>
         </state>
@@ -452,7 +450,7 @@
             <element signature="e#3294#3935#0" expanded="false" />
             <element signature="e#4014#4870#0" expanded="false" />
             <element signature="e#4935#5445#0" expanded="false" />
-            <element signature="e#7866#9389#0" expanded="false" />
+            <element signature="e#7867#9390#0" expanded="false" />
             <element signature="e#9422#12471#0" expanded="false" />
           </folding>
         </state>
@@ -603,7 +601,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-10857">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -637,7 +634,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="9" column="36" lean-forward="false" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -645,7 +641,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1547">
           <caret line="91" column="1" lean-forward="false" selection-start-line="91" selection-start-column="1" selection-end-line="91" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -659,26 +654,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/newsfeed/face_recognition_api.py">
+    <entry file="file://$PROJECT_DIR$/newsfeed/face_recognition_api.py" />
+    <entry file="file://$PROJECT_DIR$/newsfeed/templates/newsfeed/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="221">
+          <caret line="13" column="32" lean-forward="false" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/encodings.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6510">
-          <caret line="2" column="8" lean-forward="false" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
+        <state relative-caret-position="465">
+          <caret line="267" column="9" lean-forward="false" selection-start-line="267" selection-start-column="9" selection-end-line="267" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/newsfeed/templates/newsfeed/live-attendance.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="37" lean-forward="false" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/newsfeed/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="254" column="52" lean-forward="false" selection-start-line="254" selection-start-column="52" selection-end-line="254" selection-end-column="52" />
+        <state relative-caret-position="210">
+          <caret line="243" column="5" lean-forward="false" selection-start-line="243" selection-start-column="5" selection-end-line="243" selection-end-column="5" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
             <element signature="e#939#1381#0" expanded="false" />
@@ -689,26 +693,8 @@
             <element signature="e#3294#3935#0" expanded="false" />
             <element signature="e#4014#4870#0" expanded="false" />
             <element signature="e#4935#5445#0" expanded="false" />
-            <element signature="e#7866#9389#0" expanded="false" />
+            <element signature="e#7867#9390#0" expanded="false" />
             <element signature="e#9422#12471#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/newsfeed/templates/newsfeed/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="8" column="26" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="35" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/newsfeed/templates/newsfeed/live-attendance.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="20" lean-forward="true" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
-          <folding>
-            <element signature="e#292#317#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
