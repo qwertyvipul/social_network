@@ -1,0 +1,19 @@
+{% extends 'newsfeed/base.html' %}
+{% block page_title %}{{ user.name }}{% endblock %}
+{% block your_name %}{{ user.name }}{% endblock %}
+
+{% block page_content %}
+<section class="site-content">
+    <form action="{% url 'newsfeed:uploadPhoto' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ profilePicForm.as_p }}
+        <button type="submit">Upload</button>
+    </form>
+
+    <section>
+        {% for result in query %}
+            <img src="{{ result.profile_pic.url }}" width="200px" height="200px"/>
+        {% endfor %}
+    </section>
+</section>
+{% endblock %}
