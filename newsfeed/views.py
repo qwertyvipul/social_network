@@ -5,6 +5,10 @@ from .forms import *
 from django.urls import reverse_lazy
 from django.shortcuts import redirect
 
+import json
+import face_recognition
+
+
 
 def index(request):
     return redirect('newsfeed:newsfeed')
@@ -190,6 +194,35 @@ def uploadProfilePic(request):
                 break
             profilePic.profile_pic = profilePicForm.cleaned_data['profile_pic']
             profilePic.save()
+
+            new_data = {}
+            new_data['people'] = []
+
+            # Need a check that if a file does not exist skip to create file and adding the content
+            with open('encodings.json') as infile:
+                d = json.load(infile)
+
+            for people in d['people']:
+                new_data['people'].append({
+                    'name': people['name'],
+                    'encoding': people['encoding']
+                })
+
+            new_image = face_recognition.load_image_file(profilePic.profile_pic)
+            face_location = face_recognition.face_locations(new_image)
+            face_encoding = face_recognition.face_encodings(new_image, face_location)
+
+            for encoding in face_encoding:
+                new_data['people'].append({
+                    'name': user.name,
+                    'encoding': encoding.tolist()
+                })
+                break
+
+            with open('encodings.json', 'w') as outfile:
+                json.dump(new_data, outfile, indent=4)
+
+
             return redirect('newsfeed:profile')
         else:
             print(profilePicForm.errors)
