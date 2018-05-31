@@ -3,6 +3,7 @@ from .import views
 
 app_name = 'newsfeed'
 
+#urls
 urlpatterns = [
     path('', views.index, name='index'),
     path('newsfeed/', views.newsfeed, name='newsfeed'),

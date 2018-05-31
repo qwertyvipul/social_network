@@ -374,6 +374,7 @@ def webcamRecognition():
             break
 
     # Release handle to the webcam
+    # Ok
     video_capture.release()
     cv2.destroyAllWindows()
 
