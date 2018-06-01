@@ -11,6 +11,9 @@
         <button type="submit">Upload</button>
     </form>
 
+<h2>--OR--</h2>
+<a href="{% url 'newsfeed:webcamCapture' %}"><button>Capture from Webcam</button></a>
+
     <section>
         {% for result in query %}
             <img src="{{ result.profile_pic.url }}" width="200px" height="200px"/>

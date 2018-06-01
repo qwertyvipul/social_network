@@ -11,7 +11,6 @@ import face_recognition
 import cv2
 
 
-
 def index(request):
     return redirect('newsfeed:newsfeed')
 
@@ -123,7 +122,6 @@ def postStatus(request):
             status.save()
 
     return redirect('newsfeed:newsfeed')
-
 
 def uploadPhoto(request):
     pass
@@ -381,3 +379,84 @@ def webcamRecognition():
 
     return name_list
 
+def webcamCapture(request):
+    if request.session.has_key('user_id') and request.session['user_id']!=0:
+        id = request.session['user_id']
+    else:
+        return redirect('newsfeed:login')
+
+    query = UserInfo.objects.filter(id=id)
+    for user in query:
+        break
+
+    video_capture = cv2.VideoCapture(0)  # start capturing the video
+    face_locations = []
+    process_this_frame = True
+
+    while True:
+        ret, frame = video_capture.read()  # Grab a single frame of video
+        small_frame = cv2.resize(frame, (0, 0), fx=0.25,
+                                 fy=0.25)  # Resize frame of video to 1/4 size for faster face recognition processing
+        rgb_small_frame = small_frame[:, :, ::-1]
+
+        # Only process every other frame of video to save time
+        if process_this_frame:
+            face_locations = face_recognition.face_locations(rgb_small_frame)
+
+        process_this_frame = not process_this_frame
+
+        # Display the results
+        for (top, right, bottom, left) in face_locations:
+            # Scale back up face locations since the frame we detected in was scaled to 1/4 size
+            top *= 4
+            right *= 4
+            bottom *= 4
+            left *= 4
+
+            cv2.rectangle(frame, (left, top), (right, bottom), (0, 0, 255), 2)
+
+        cv2.imshow('Video', frame)  # Display the resulting image
+
+        if cv2.waitKey(1) & 0xFF == ord('q'):  # Hit 'q' on the keyboard to quit!
+            face_encodings = face_recognition.face_encodings(rgb_small_frame, face_locations)
+            break
+
+
+    video_capture.release()
+
+    #profilePic = ProfilePictures()
+    query = UserInfo.objects.filter(id=id)
+    for user in query:
+        #profilePic.user = user
+        break
+
+    #profilePic.profile_pic = any(rgb_small_frame)
+    #profilePic.save()
+
+
+
+    new_data = {}
+    new_data['people'] = []
+
+    with open('encodings.json') as infile:
+        d = json.load(infile)
+
+    for people in d['people']:
+        new_data['people'].append({
+            'name': people['name'],
+            'encoding': people['encoding']
+        })
+
+    for encoding in face_encodings:
+        new_data['people'].append({
+            'name': user.name,
+            'encoding': encoding.tolist()
+        })
+        break
+
+    with open('encodings.json', 'w') as outfile:
+        json.dump(new_data, outfile, indent=4)
+
+
+    cv2.destroyAllWindows()
+    return redirect('newsfeed:profile')

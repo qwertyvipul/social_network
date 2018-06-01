@@ -17,5 +17,6 @@ urlpatterns = [
     path('unlike-status/<int:status_id>', views.unlikeStatus, name='unlikeStatus'),
     path('profile/', views.profile, name='profile'),
     path('upload-profile-pic/', views.uploadProfilePic, name='uploadProfilePic'),
-    path('live-attendance/', views.liveAttendance, name='liveAttendance')
+    path('live-attendance/', views.liveAttendance, name='liveAttendance'),
+    path('webcam-capture/', views.webcamCapture, name='webcamCapture')
 ]
